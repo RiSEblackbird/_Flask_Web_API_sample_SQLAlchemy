@@ -20,24 +20,28 @@
 
 ### **Flask**について
 
-- GitHub : https://github.com/pallets/flask
-- Official : https://flask.palletsprojects.com/en/1.1.x/
-
-- Goコマンド
-  - 原文 : https://golang.org/cmd/go/
-  - 日訳 : https://godoc.org/github.com/gophersjp/go/src/cmd/go
-
-- 文法 (The Go Programming Language Specification)
-  - 原文 : https://golang.org/ref/spec
+- GitHub : <https://github.com/pallets/flask>
+- Official : <https://flask.palletsprojects.com/en/1.1.x/>
 
 ### **Python**について
 
-- GitHub : https://github.com/python
-- Official : https://www.python.org/
-- Documentation :
-  - General : https://www.python.org/doc/
-  - Language : https://docs.python.org/ja/3/reference/index.html
-  - CommandLine : https://docs.python.org/ja/3/using/cmdline.html
+- GitHub : <https://github.com/python>
+- Official : <https://www.python.org/>
+- Document
+  - General : <https://www.python.org/doc/>
+  - Language : <https://docs.python.org/ja/3/reference/index.html>
+  - CommandLine : <https://docs.python.org/ja/3/using/cmdline.html>
+  - os : <https://docs.python.org/ja/3/library/os.html>
+    - 雑多なオペレーティングシステムインタフェース
+
+### **flask-sqlalchemy**について
+
+FlaskアプリケーションでSQLAlchemyの機能の使用をサポートするツール
+
+- GitHub : <https://github.com/pallets/flask-sqlalchemy>
+- Official : <https://flask-sqlalchemy.palletsprojects.com/en/2.x/>
+- Document
+  - API Reference : <https://flask-sqlalchemy.palletsprojects.com/en/2.x/api/>
 
 ## 工程(参考先より適宜変更)
 
@@ -52,27 +56,27 @@
 - 当該環境の有効化
   - ``$ . venv/bin/activate``
 
-    ~~~
+    ~~~log
     (base) ***:_Flask_Web_API_sample_SQLAlchemy ***$ . venv/bin/activate
-    (venv) (base) ***:_Flask_Web_API_sample_SQLAlchemy ***$ 
+    (venv) (base) ***:_Flask_Web_API_sample_SQLAlchemy ***$
     ~~~
 
 - ``Flask``等ライブラリのインストール
   - ``$ pip install flask SQLAlchemy flask-sqlalchemy PyMySQL``
-    - **SQLAlchemy** :
-      - GitHub : https://github.com/sqlalchemy/sqlalchemy
-      - Official : https://www.sqlalchemy.org/
+    - **SQLAlchemy**
+      - GitHub : <https://github.com/sqlalchemy/sqlalchemy>
+      - Official : <https://www.sqlalchemy.org/>
         - Python SQLツールキットとO／Rマッパー
-    - **flask-sqlalchemy** :
-      - GitHub : https://github.com/pallets/flask-sqlalchemy
-      - Official : https://flask-sqlalchemy.palletsprojects.com/en/2.x/
+    - **flask-sqlalchemy**
+      - GitHub : <https://github.com/pallets/flask-sqlalchemy>
+      - Official : <https://flask-sqlalchemy.palletsprojects.com/en/2.x/>
         - FlaskアプリケーションでSQLAlchemyの機能の使用をサポートするツール
-    - **PyMySQL** :
-      - GitHub : https://github.com/PyMySQL/PyMySQL
-      - Official : https://pymysql.readthedocs.io/en/latest/
+    - **PyMySQL**
+      - GitHub : <https://github.com/PyMySQL/PyMySQL>
+      - Official : <https://pymysql.readthedocs.io/en/latest/>
         - Python MySQLのクライアントライブラリ
 
-    ~~~
+    ~~~log
     flask in ./venv/lib/python3.8/site-packages (1.1.2)
     SQLAlchemy in ./venv/lib/python3.8/site-packages (1.3.19)
     flask-sqlalchemy in ./venv/lib/python3.8/site-packages (2.4.4)
@@ -84,15 +88,22 @@
     MarkupSafe>=0.23 in ./venv/lib/python3.8/site-packages (from Jinja2>=2.10.1->flask) (1.1.1)
     ~~~
 
-###  アプリケーションの体系を準備
+### アプリケーションの体系を準備
 
 - ``flask_sqlalchemy``によるDBの初期化処理
   - ``app/database.py``
     - Import
       - ``flask_sqlalchemy``
+    - Method
+      - [init_app(app)](https://flask-sqlalchemy.palletsprojects.com/en/2.x/api/#flask_sqlalchemy.SQLAlchemy.init_app)
+        - 対象のデータベース設定で使用するアプリケーションを初期化する
 
-- []()
-- 
+- 各ライブラリの設定項目を集約
+  - ``app/config.py``
+    - Import : os
+    - Method
+      - [getenvb(key, default=None)](https://docs.python.org/ja/3/library/os.html#os.getenvb)
+        - 環境変数の設定に用いる
 
 ### 
 
