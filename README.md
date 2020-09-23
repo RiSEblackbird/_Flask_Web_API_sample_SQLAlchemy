@@ -84,7 +84,8 @@
     MarkupSafe>=0.23 in ./venv/lib/python3.8/site-packages (from Jinja2>=2.10.1->flask) (1.1.1)
     ~~~
 
-- アプリケーションの体系を準備
+###  アプリケーションの体系を準備
+
 - ``flask_sqlalchemy``によるDBの初期化処理
   - ``app/database.py``
     - Import
