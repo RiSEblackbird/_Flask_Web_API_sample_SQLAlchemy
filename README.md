@@ -49,6 +49,13 @@
 - ``venv``モジュールから仮想環境を構築
   - ``$ python3 -m venv venv``
 
+- 当該環境の有効化
+  - ``$ . venv/bin/activate``
+
+    ~~~
+    (base) ***:_Flask_Web_API_sample_SQLAlchemy ***$ . venv/bin/activate
+    (venv) (base) ***:_Flask_Web_API_sample_SQLAlchemy ***$ 
+    ~~~
 
 - []()
 - 
