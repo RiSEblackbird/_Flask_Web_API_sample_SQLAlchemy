@@ -37,10 +37,18 @@
 - Documentation :
   - General : https://www.python.org/doc/
   - Language : https://docs.python.org/ja/3/reference/index.html
+  - CommandLine : https://docs.python.org/ja/3/using/cmdline.html
 
 ## 工程(参考先より適宜変更)
 
-### 
+### [仮想環境の準備](https://flask.palletsprojects.com/en/1.1.x/installation/#virtual-environments)
+
+- 参考
+  - [venv --- 仮想環境の作成 — Python 3.8.6rc1 ドキュメント](https://docs.python.org/ja/3/library/venv.html#module-venv)
+
+- ``venv``モジュールから仮想環境を構築
+  - ``$ python3 -m venv venv``
+
 
 - []()
 - 
