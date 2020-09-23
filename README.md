@@ -57,6 +57,33 @@
     (venv) (base) ***:_Flask_Web_API_sample_SQLAlchemy ***$ 
     ~~~
 
+- ``Flask``等ライブラリのインストール
+  - ``$ pip install flask SQLAlchemy flask-sqlalchemy PyMySQL``
+    - **SQLAlchemy** :
+      - GitHub : https://github.com/sqlalchemy/sqlalchemy
+      - Official : https://www.sqlalchemy.org/
+        - Python SQLツールキットとO／Rマッパー
+    - **flask-sqlalchemy** :
+      - GitHub : https://github.com/pallets/flask-sqlalchemy
+      - Official : https://flask-sqlalchemy.palletsprojects.com/en/2.x/
+        - FlaskアプリケーションでSQLAlchemyの機能の使用をサポートするツール
+    - **PyMySQL** :
+      - GitHub : https://github.com/PyMySQL/PyMySQL
+      - Official : https://pymysql.readthedocs.io/en/latest/
+        - Python MySQLのクライアントライブラリ
+
+    ~~~
+    flask in ./venv/lib/python3.8/site-packages (1.1.2)
+    SQLAlchemy in ./venv/lib/python3.8/site-packages (1.3.19)
+    flask-sqlalchemy in ./venv/lib/python3.8/site-packages (2.4.4)
+    PyMySQL in ./venv/lib/python3.8/site-packages (0.10.1)
+    Jinja2>=2.10.1 in ./venv/lib/python3.8/site-packages (from flask) (2.11.2)
+    itsdangerous>=0.24 in ./venv/lib/python3.8/site-packages (from flask) (1.1.0)
+    click>=5.1 in ./venv/lib/python3.8/site-packages (from flask) (7.1.2)
+    Werkzeug>=0.15 in ./venv/lib/python3.8/site-packages (from flask) (1.0.1)
+    MarkupSafe>=0.23 in ./venv/lib/python3.8/site-packages (from Jinja2>=2.10.1->flask) (1.1.1)
+    ~~~
+
 - []()
 - 
 
