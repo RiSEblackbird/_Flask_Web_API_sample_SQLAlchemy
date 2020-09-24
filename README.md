@@ -90,7 +90,7 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
 ### アプリケーションの体系を準備
 
 - ``flask_sqlalchemy``によるDBの初期化処理
-  - ``app/database.py``
+  - ``server/database.py``
     - Import
       - ``flask_sqlalchemy``
     - Method
@@ -98,21 +98,21 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
         - 対象のデータベース設定で使用するアプリケーションを初期化する
 
 - 各ライブラリの設定項目を集約
-  - ``app/config.py``
+  - ``server/config.py``
     - Import : ``os``
     - Method
       - [getenvb(key, default=None)](https://docs.python.org/ja/3/library/os.html#os.getenvb)
         - 環境変数の設定に用いる
 
 - Flaskアプリケーションの初期化と、中枢となるオブジェクトの定義
-  - ``app/app.py``
+  - ``server/app.py``
     - Import
       - ``flask``, ``database``
     - ``app = Flask(__name__)``
       - <https://flask.palletsprojects.com/en/1.1.x/tutorial/factory/>
       - Flaskクラスのインスタンスを作成
         - ``__name__``については後述の**Tips**項で言及
-    - ``app.config.from_object('app.config.Config')``
+    - ``app.config.from_object('server.config.Config')``
       - <https://flask.palletsprojects.com/en/1.1.x/api/#configuration>
       - 指定した外部のオブジェクトから設定値を適用する
 
@@ -141,7 +141,10 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
 
 ~~~txt
 _Flask_Web_API_sample_SQLAlchemy
-├── 
+├── app
+│   ├── app.py
+│   ├── config.py
+│   ├── database.py
 │   └── 
 ├── 
 │   └── 
