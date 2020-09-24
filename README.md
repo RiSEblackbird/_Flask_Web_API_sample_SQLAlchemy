@@ -11,12 +11,11 @@
 
 ## 主なリファレンス
 
-- メインチュートリアル
-  - **[Installation — Flask Documentation (1.1.x)](https://flask.palletsprojects.com/en/1.1.x/installation/)**
-  - **[Quickstart — Flask Documentation (1.1.x)](https://flask.palletsprojects.com/en/1.1.x/quickstart/)**
-  - **[Flask + SQLAlchemyプロジェクトを始める手順 - Qiita](https://qiita.com/shirakiya/items/0114d51e9c189658002e#comments)**
-  - **[]()**
-  - **[]()**
+### メインチュートリアル
+
+- **[Installation — Flask Documentation (1.1.x)](https://flask.palletsprojects.com/en/1.1.x/installation/)**
+- **[Quickstart — Flask Documentation (1.1.x)](https://flask.palletsprojects.com/en/1.1.x/quickstart/)**
+- **[Flask + SQLAlchemyプロジェクトを始める手順 - Qiita](https://qiita.com/shirakiya/items/0114d51e9c189658002e#comments)**
 
 ### **Flask**について
 
@@ -100,10 +99,23 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
 
 - 各ライブラリの設定項目を集約
   - ``app/config.py``
-    - Import : os
+    - Import : ``os``
     - Method
       - [getenvb(key, default=None)](https://docs.python.org/ja/3/library/os.html#os.getenvb)
         - 環境変数の設定に用いる
+
+- Flaskアプリケーションの初期化と、中枢となるオブジェクトの定義
+  - ``app/app.py``
+    - Import
+      - ``flask``, ``database``
+    - ``app = Flask(__name__)``
+      - <https://flask.palletsprojects.com/en/1.1.x/tutorial/factory/>
+      - Flaskクラスのインスタンスを作成
+        - ``__name__``については後述の**Tips**項で言及
+    - ``app.config.from_object('app.config.Config')``
+      - <https://flask.palletsprojects.com/en/1.1.x/api/#configuration>
+      - 指定した外部のオブジェクトから設定値を適用する
+
 
 ### 
 
@@ -114,7 +126,11 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
 
 ## Tips
 
-### 
+### [\_\_main\_\_ --- トップレベルのスクリプト環境 — Python 3.8.6rc1 ドキュメント](https://docs.python.org/ja/3/library/__main__.html)
+
+- トップレベルのコードが実行されるスコープの名前が入る
+- スクリプトとして実行されるときは``__main__``が入る
+- 他のファイルからインポートして実行される場合はモジュールのファイル名が入る
 
 ### 
 
