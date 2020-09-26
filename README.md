@@ -115,6 +115,13 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
     - ``app.config.from_object('server.config.Config')``
       - <https://flask.palletsprojects.com/en/1.1.x/api/#configuration>
       - 指定した外部のオブジェクトから設定値を適用する
+- アプリケーションの起動設定
+  - ``run.py``
+    - Import : ``server.app``
+
+### modelの作成
+
+- 
 
 
 ### 
@@ -132,7 +139,9 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
 - スクリプトとして実行されるときは``__main__``が入る
 - 他のファイルからインポートして実行される場合はモジュールのファイル名が入る
 
-### 
+### ``__init__.py``について(Pythonにおけるパッケージ)
+
+- <https://docs.python.org/ja/3/reference/import.html#packages>
 
 - []()
 
@@ -141,18 +150,19 @@ FlaskアプリケーションでSQLAlchemyの機能の使用をサポートす�
 
 ~~~txt
 _Flask_Web_API_sample_SQLAlchemy
-├── app
+├── server
 │   ├── app.py
 │   ├── config.py
 │   ├── database.py
 │   └── 
-├── 
-│   └── 
+├── models
+│   ├── __init__.py
+│   └── models.py
 ├── .gitignore               // standard gitignore file
+├── README.md                // simple readme file
+├── run.py
 ├── 
-├── 
-├── 
-└── README.md                // simple readme file
+└── 
 
 ### ├── │ └──
 ~~~
